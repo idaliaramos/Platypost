@@ -1,14 +1,13 @@
 import styled from "styled-components/native";
 
-const StyledInput = styled.TextInput`
+const ShortInput = styled.TextInput`
   margin-bottom: 10px;
   height: 40;
-  width: 280px;
+  width: 133px;
   ${"" /* padding-left: 15px; */}
   border-bottom-width: 1px;
   border-color: grey;
-  ${"" /* justify-content: center;
+  ${'' /* justify-content: center;
   align-items: center; */};
-
 `;
-export default StyledInput;
+export default ShortInput;

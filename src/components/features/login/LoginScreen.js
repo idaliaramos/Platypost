@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, Image, Input } from 'react-native';
+import { Text, View}from 'react-native';
 import {apiCall } from '../../../redux/actions/login';
 import { connect } from 'react-redux';
- import { bindActionCreators } from 'redux';
+import { bindActionCreators } from 'redux';
 import * as actions from '../../../redux/actions/login';
 import * as loginConstants from '../../../constants/login/LoginConstants';
 import Button from '../../common/Button';
@@ -23,10 +23,11 @@ class LoginScreen extends Component {
     passwordError: false,
     emailError: false,
   };
-  onSubmit = () => {
+onSubmit = () => {
     let { email, password } = this.state;
     //TODO: add more validation
     if (validatePassword(password)) {
+      //this.props.apiCall(email,password);
       this.props.apiCall(email,password);
       this.setState({ passwordError: false });
     } else {
@@ -35,10 +36,11 @@ class LoginScreen extends Component {
   };
 
   onError = () => {
-    if (this.props.error) {
+    let {error}=this.props
+    if (error) {
       return (
         <View>
-          <Text>{this.props.error}</Text>
+          <Text>{error}</Text>
         </View>
       );
     }
@@ -95,8 +97,9 @@ const mapStateToProps = state => {
     user
   };
 };
+
 //TODO:
 export default connect(
   mapStateToProps,
-  {apiCall }
+{apiCall}
 )(LoginScreen);
