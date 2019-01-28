@@ -43,8 +43,8 @@
     "preset": "react-native"
   },
   "prettier": {
-  "jsxBracketSameLine": true,
-  "semi": false,
-  "singleQuote": true
-}
+    "jsxBracketSameLine": true,
+    "semi": false,
+    "singleQuote": true
+  }
 }
