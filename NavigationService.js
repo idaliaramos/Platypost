@@ -1,26 +1,26 @@
-import { NavigationActions } from 'react-navigation';
+import { NavigationActions } from 'react-navigation'
 
-const config = {};
+const config = {}
 
 export function setNavigator(nav) {
   if (nav) {
-    //when attempting to console.log nav app crashes, yete does go
-    //in if block...
+    //  when attempting to console.log nav app crashes, yete does go
+    //  in if block...
     console.log('Nav')
-    config.navigator = nav;
+    config.navigator = nav
   }
 }
 
-export function navigate(route, params) {
+export function navigate(route) {
   if (config.navigator && route) {
-    let action = NavigationActions.navigate({routeName: route});
-    config.navigator.dispatch(action);
+    const action = NavigationActions.navigate({ routeName: route })
+    config.navigator.dispatch(action)
   }
 }
 
 export function goBack() {
   if (config.navigator) {
-    let action = NavigationActions.back({});
-    config.navigator.dispatch(action);
+    const action = NavigationActions.back({})
+    config.navigator.dispatch(action)
   }
 }

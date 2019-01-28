@@ -1,5 +1,4 @@
-import React from "react";
-import styled from "styled-components";
+import styled from 'styled-components'
 
 const PasswordInput = styled.TextInput.attrs({
   type: `props.showPassword ? 'text': 'password'`
@@ -8,5 +7,5 @@ const PasswordInput = styled.TextInput.attrs({
   width:70%;
   border: 1px solid
   border-color: black;
-`;
-export default PasswordInput;
+`
+export default PasswordInput

@@ -21,7 +21,8 @@
     "redux": "^4.0.1",
     "redux-persist": "^5.10.0",
     "redux-saga": "^0.16.2",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "styled-components": "^4.1.2"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
@@ -36,8 +37,7 @@
     "jest": "23.6.0",
     "metro-react-native-babel-preset": "0.51.1",
     "prettier": "^1.16.1",
-    "react-test-renderer": "16.6.3",
-    "styled-components": "^4.1.2"
+    "react-test-renderer": "16.6.3"
   },
   "jest": {
     "preset": "react-native"

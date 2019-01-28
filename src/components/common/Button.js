@@ -1,6 +1,6 @@
-import React from "react";
-import { Text, TouchableOpacity } from "react-native";
-import styled from "styled-components";
+import React from 'react'
+import { Text, TouchableOpacity } from 'react-native'
+import styled from 'styled-components'
 
 const ButtonContainer = styled.TouchableOpacity`
   background-color: #00cc99;
@@ -10,13 +10,12 @@ const ButtonContainer = styled.TouchableOpacity`
   align-items: center;
   justify-content: center;
   margin-top: 25px;
-
-`;
+`
 const Button = ({ children, onPress }) => {
   return (
     <ButtonContainer onPress={onPress}>
       <Text>{children}</Text>
     </ButtonContainer>
-  );
-};
-export default Button;
+  )
+}
+export default Button
