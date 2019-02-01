@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Text, View } from 'react-native'
-import { apiCall } from '../../../redux/actions/login'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+import { apiCall } from '../../../redux/actions/login'
 import * as actions from '../../../redux/actions/login'
 import * as loginConstants from '../../../constants/login/LoginConstants'
 import Button from '../../common/Button'
@@ -18,16 +18,17 @@ import validatePassword from './utils/LoginUtils'
 
 class LoginScreen extends Component {
   state = {
-    showPassword: false,
-    passwordError: false,
-    emailError: false
+    // showPassword: false,
+    passwordError: false
+    // emailError: false
   }
 
   onSubmit = () => {
     const { email, password } = this.state
+    const { apiCall } = this.props
     // TODO: add more validation
     if (validatePassword(password)) {
-      this.props.apiCall(email, password)
+      apiCall(email, password)
       this.setState({ passwordError: false })
     } else {
       this.setState({ passwordError: true })
@@ -70,13 +71,13 @@ class LoginScreen extends Component {
           <StyledFormLabel>Email</StyledFormLabel>
           <StyledInput
             onChangeText={text => this.setState({ email: text })}
-            value={email || this.props.email}
+            // value={this.state.email || this.props.email}
           />
           <View>
             <StyledFormLabel>{loginConstants.PASSWORD}</StyledFormLabel>
             <StyledInput
               onChangeText={text => this.setState({ password: text })}
-              value={password || this.props.password}
+              // value={this.state.password || this.props.password}
               secureTextEntry
             />
           </View>
@@ -90,7 +91,9 @@ class LoginScreen extends Component {
   }
 }
 const mapStateToProps = state => {
-  const { email, password, error, loading, user } = state.auth
+  const {
+ email, password, error, loading, user
+} = state.auth
 
   return {
     email,
