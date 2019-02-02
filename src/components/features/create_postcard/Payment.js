@@ -21,7 +21,10 @@ class Payment extends React.Component {
               'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQJeTjQx0sacbw_JhV-_VodB5U3c-YubFFkHcpW0oAtOejsy7p'
           }}
         />
-        <BackPostCardComponent />
+        <BackPostCardComponent
+          info={this.props.receiverInfo}
+          message={this.props.message}
+        />
         <Text> Total: 1.99</Text>
         <Button onPress={this.onSubmit}>{postcardConstants.PAY}</Button>
       </GeneralContainer>
@@ -29,11 +32,12 @@ class Payment extends React.Component {
   }
 }
 const mapStateToProps = state => {
-  const { senderInfo, message } = state.postCard
+  const { senderInfo, message, receiverInfo } = state.postCard
 
   return {
     senderInfo,
-    message
+    message,
+    receiverInfo
   }
 }
 export default connect(mapStateToProps)(Payment)

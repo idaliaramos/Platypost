@@ -5,7 +5,7 @@ import PostCardContainer from './PostCardContainer'
 import { Fonts } from '../../utils/Fonts'
 import AddressReviewComponent from './AddressReviewComponent'
 
-const BackPostCardComponent = children => (
+const BackPostCardComponent = ({ info, message }) => (
   <PostCardContainer
     style={{
       borderWidth: 1,
@@ -29,9 +29,7 @@ const BackPostCardComponent = children => (
             fontFamily: Fonts.Handlee
           }}
         >
-          This is a lovely photo i took in barcelona, thought you would like it,
-          hope all is well.This is a lovely photo i took in barcelona, thought
-          you would like it, hope all is well
+          {message}
         </Text>
       </View>
       <View
@@ -43,7 +41,7 @@ const BackPostCardComponent = children => (
           fontSize: 2
         }}
       >
-        <AddressReviewComponent />
+        <AddressReviewComponent info={info} />
       </View>
     </View>
   </PostCardContainer>

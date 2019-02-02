@@ -44,12 +44,12 @@ class AddAddress1 extends Component {
           <StyledFormLabel>Name</StyledFormLabel>
           <StyledInput
             onChangeText={text => this.setState({ receiverName: text })}
-            value={receiverName}
+            value={receiverName || this.props.receiverInfo.receiverName}
           />
           <StyledFormLabel>Address</StyledFormLabel>
           <StyledInput
             onChangeText={text => this.setState({ address: text })}
-            value={address}
+            value={address || this.props.receiverInfo.address}
           />
         </Container>
         <Button onPress={this.onSubmit}>{postcardConstants.NEXT}</Button>
@@ -59,10 +59,11 @@ class AddAddress1 extends Component {
 }
 
 const mapStateToProps = state => {
-  const { userInfo } = state.postCard
+  const { userInfo, receiverInfo } = state.postCard
 
   return {
-    userInfo
+    userInfo,
+    receiverInfo
   }
 }
 export default connect(
