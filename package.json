@@ -8,6 +8,11 @@
     "lint": "eslint *.js **/*.js",
     "prettier": "prettier 'src/**/*.js'"
   },
+  "rnpm": {
+    "assets": [
+      "./assets/fonts"
+    ]
+  },
   "dependencies": {
     "expo": "^31.0.2",
     "firebase": "^5.6.0",

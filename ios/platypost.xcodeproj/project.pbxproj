@@ -40,6 +40,7 @@
 		F2664462E6F049F5AB273CDE /* libRNGestureHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACB3F1090E0044178F8E8C03 /* libRNGestureHandler.a */; };
 		FCD5AD88F2F543E9B647DD4A /* libRNLanguages.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 28AEEEDC2C2940058DEFA9EE /* libRNLanguages.a */; };
 		2CBDAC879C604678ACD635DB /* libRNLanguages-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E3E25682746047C29960B19C /* libRNLanguages-tvOS.a */; };
+		793EFC03D7384999976213EA /* Handlee-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F685E3CCCC674BA98C6984CF /* Handlee-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -350,6 +351,7 @@
 		9D40220824D44104A4CA54A6 /* RNLanguages.xcodeproj */ = {isa = PBXFileReference; name = "RNLanguages.xcodeproj"; path = "../node_modules/react-native-languages/ios/RNLanguages.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		28AEEEDC2C2940058DEFA9EE /* libRNLanguages.a */ = {isa = PBXFileReference; name = "libRNLanguages.a"; path = "libRNLanguages.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		E3E25682746047C29960B19C /* libRNLanguages-tvOS.a */ = {isa = PBXFileReference; name = "libRNLanguages-tvOS.a"; path = "libRNLanguages-tvOS.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		F685E3CCCC674BA98C6984CF /* Handlee-Regular.ttf */ = {isa = PBXFileReference; name = "Handlee-Regular.ttf"; path = "../assets/fonts/Handlee-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -589,6 +591,7 @@
 				00E356EF1AD99517003FC87E /* platypostTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
+				A49E85B8E3504B58BB06BADD /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -614,6 +617,15 @@
 			);
 			name = Products;
 			sourceTree = "<group>";
+		};
+		A49E85B8E3504B58BB06BADD /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				F685E3CCCC674BA98C6984CF /* Handlee-Regular.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -1061,6 +1073,7 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				793EFC03D7384999976213EA /* Handlee-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
