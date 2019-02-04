@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Text } from 'react-native'
+import { Text, View } from 'react-native'
 import Button from '../../common/Button'
 import GeneralContainer from '../../common/GeneralContainer'
 import StyledImage from '../../common/StyledImage'
@@ -14,6 +14,7 @@ class Payment extends React.Component {
   render() {
     return (
       <GeneralContainer>
+        <Text />
         <MainTitle>{postcardConstants.PAYMENT}</MainTitle>
         <StyledImage
           source={{
@@ -25,7 +26,7 @@ class Payment extends React.Component {
           info={this.props.receiverInfo}
           message={this.props.message}
         />
-        <Text> Total: 1.99</Text>
+        <Text style={{ textAlign: 'right' }}> Total: 1.99</Text>
         <Button onPress={this.onSubmit}>{postcardConstants.PAY}</Button>
       </GeneralContainer>
     )

@@ -12,10 +12,11 @@ const BackPostCardComponent = ({ info, message }) => (
       borderRadius: 5,
       marginTop: 10,
       marginBottom: 10,
-      borderLeftColor: 'grey',
-      borderRightColor: 'white',
-      borderTopColor: 'white',
-      borderBottomColor: 'grey'
+      borderLeftColor: '#EAEAEA',
+      borderRightColor: '#EAEAEA',
+      borderTopColor: '#EAEAEA',
+      borderBottomColor: 'grey',
+      blurRadius: 1
     }}
   >
     <View style={{ flexDirection: 'row' }}>
