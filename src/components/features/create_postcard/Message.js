@@ -15,8 +15,8 @@ class Message extends Component {
 
   onSubmit = () => {
     const { message } = this.state
-    console.log(message, 'mess')
-    this.props.addMessage(message)
+    // let message = message || this.props.message
+    this.props.addMessage(message || this.props.message)
     NavigationService.navigate('PAYMENT')
   }
 
@@ -29,7 +29,7 @@ class Message extends Component {
           {/* <StyledFormLabel>Enter Message</StyledFormLabel> */}
           <StyledInput
             onChangeText={text => this.setState({ message: text })}
-            value={message}
+            value={message || this.props.message}
             multiline
             numberOfLines={6}
             editable
@@ -42,10 +42,10 @@ class Message extends Component {
   }
 }
 const mapStateToProps = state => {
-  const { senderInfo } = state.postCard
+  const { message } = state.postCard
 
   return {
-    senderInfo
+    message
   }
 }
 export default connect(

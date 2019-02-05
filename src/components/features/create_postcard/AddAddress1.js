@@ -22,8 +22,9 @@ class AddAddress1 extends Component {
     console.log('this.state', this.state)
     const { receiverName, receiverAddress } = this.state
     const { receiverInfo } = this.props
+    console.log(receiverInfo, 'receiverInfo')
     // TODO: add more validation
-    const name = receiverName || receiverInfo.receiverName
+    const name = receiverName || receiverInfo.name
     const address = receiverAddress || receiverInfo.address
     const info = { name, address }
     if (name && address) {
@@ -46,7 +47,7 @@ class AddAddress1 extends Component {
           <StyledFormLabel>Name</StyledFormLabel>
           <StyledInput
             onChangeText={text => this.setState({ receiverName: text })}
-            value={receiverName || this.props.receiverInfo.receiverName}
+            value={receiverName || this.props.receiverInfo.name}
           />
           <StyledFormLabel>Address</StyledFormLabel>
           <StyledInput
@@ -61,10 +62,9 @@ class AddAddress1 extends Component {
 }
 
 const mapStateToProps = state => {
-  const { userInfo, receiverInfo } = state.postCard
+  const { receiverInfo } = state.postCard
 
   return {
-    userInfo,
     receiverInfo
   }
 }
