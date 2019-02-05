@@ -13,21 +13,23 @@ import { addReceiverAddress } from '../../../redux/actions/create_postcard'
 
 class AddAddress1 extends Component {
   state = {
-    address: '',
-    receiverName: ''
+    receiverAddress: undefined,
+    receiverName: undefined
     // error: ''
   }
 
   onSubmit = () => {
     console.log('this.state', this.state)
-    const { receiverName, address } = this.state
+    const { receiverName, receiverAddress } = this.state
+    const { receiverInfo } = this.props
     // TODO: add more validation
-
-    if (receiverName && address) {
+    const name = receiverName || receiverInfo.receiverName
+    const address = receiverAddress || receiverInfo.address
+    const info = { name, address }
+    if (name && address) {
       console.log('inside')
-      const receiverInfo = { receiverName, address }
-      this.props.addReceiverAddress(receiverInfo)
-      console.log('after')
+      this.props.addReceiverAddress(info)
+
       NavigationService.navigate('ADD_ADDRESS_2')
       this.setState({ error: false })
     } else {
@@ -36,7 +38,7 @@ class AddAddress1 extends Component {
   }
 
   render() {
-    const { receiverName, address } = this.state
+    const { receiverName, receiverAddress } = this.state
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Text>{postcardConstants.RECEIVER_ADDRESS}</Text>
@@ -48,8 +50,8 @@ class AddAddress1 extends Component {
           />
           <StyledFormLabel>Address</StyledFormLabel>
           <StyledInput
-            onChangeText={text => this.setState({ address: text })}
-            value={address || this.props.receiverInfo.address}
+            onChangeText={text => this.setState({ receiverAddress: text })}
+            value={receiverAddress || this.props.receiverInfo.address}
           />
         </Container>
         <Button onPress={this.onSubmit}>{postcardConstants.NEXT}</Button>
