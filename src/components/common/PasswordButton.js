@@ -11,11 +11,9 @@ const ButtonContainer = styled.TouchableOpacity`
   justify-content: center;
   margin-top: 25px;
 `
-const PasswordButton = ({ children, onPress }) => {
-  return (
-    <ButtonContainer onPress={onPress}>
-      <Text>{children}</Text>
-    </ButtonContainer>
+const PasswordButton = ({ children, onPress }) => (
+  <ButtonContainer onPress={onPress}>
+    <Text>{children}</Text>
+  </ButtonContainer>
   )
-}
 export default PasswordButton

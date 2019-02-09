@@ -1,19 +1,44 @@
 import React from 'react'
-import { Text } from 'react-native'
+import { connect } from 'react-redux'
+import { Text, View } from 'react-native'
 import Button from '../../common/Button'
-import CenteredContainer from '../../common/CenteredContainer'
+import GeneralContainer from '../../common/GeneralContainer'
+import StyledImage from '../../common/StyledImage'
 import * as postcardConstants from '../../../constants/create_postcard/PostcardConstants'
+import BackPostCardComponent from '../../common/BackPostcardComponent'
+import MainTitle from '../../common/MainTitle'
 
 class Payment extends React.Component {
   onSubmit = () => {}
 
   render() {
     return (
-      <CenteredContainer>
-        <Text>{postcardConstants.PAYMENT}</Text>
+      <GeneralContainer>
+        <Text />
+        <MainTitle>{postcardConstants.PAYMENT}</MainTitle>
+        <StyledImage
+          source={{
+            uri:
+              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQJeTjQx0sacbw_JhV-_VodB5U3c-YubFFkHcpW0oAtOejsy7p'
+          }}
+        />
+        <BackPostCardComponent
+          info={this.props.receiverInfo}
+          message={this.props.message}
+        />
+        <Text style={{ textAlign: 'right' }}> Total: 1.99</Text>
         <Button onPress={this.onSubmit}>{postcardConstants.PAY}</Button>
-      </CenteredContainer>
+      </GeneralContainer>
     )
   }
 }
-export default Payment
+const mapStateToProps = state => {
+  const { senderInfo, message, receiverInfo } = state.postCard
+
+  return {
+    senderInfo,
+    message,
+    receiverInfo
+  }
+}
+export default connect(mapStateToProps)(Payment)
