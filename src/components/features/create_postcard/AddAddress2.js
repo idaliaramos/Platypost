@@ -18,10 +18,11 @@ class AddAddress2 extends Component {
 
   onSubmit = () => {
     const { senderName, address } = this.state
+    const { addSenderAddress } = this.props
     // TODO: add more validation
     if (senderName && address) {
       const senderInfo = { senderName, address }
-      this.props.addSenderAddress(senderInfo)
+      addSenderAddress(senderInfo)
       NavigationService.navigate('MESSAGE')
       this.setState({ error: false })
     } else {
@@ -31,6 +32,7 @@ class AddAddress2 extends Component {
 
   render() {
     const { senderName, address } = this.state
+    const { senderInfo } = this.props
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Text>{postcardConstants.SENDER_ADDRESS}</Text>
@@ -38,12 +40,12 @@ class AddAddress2 extends Component {
           <StyledFormLabel>Name</StyledFormLabel>
           <StyledInput
             onChangeText={text => this.setState({ senderName: text })}
-            value={senderName || this.props.senderInfo.senderName}
+            value={senderName || senderInfo.senderName}
           />
           <StyledFormLabel>Address</StyledFormLabel>
           <StyledInput
             onChangeText={text => this.setState({ address: text })}
-            value={address || this.props.senderInfo.address}
+            value={address || senderInfo.address}
           />
         </Container>
         <Button onPress={this.onSubmit}>{postcardConstants.NEXT}</Button>

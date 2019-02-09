@@ -27,7 +27,7 @@ class LoginScreen extends Component {
     const { email, password } = this.state
     const { apiCall } = this.props
     // TODO: add more validation
-    if (validatePassword(password)) {
+    if (validatePassword(password) && email) {
       apiCall(email, password)
       this.setState({ passwordError: false })
     } else {
@@ -39,6 +39,7 @@ class LoginScreen extends Component {
     const { error } = this.props
     const { passwordError } = this.state
     if (error) {
+      console.log(error, 'error')
       return (
         <View>
           <Text>{error}</Text>
@@ -92,7 +93,7 @@ class LoginScreen extends Component {
 }
 const mapStateToProps = state => {
   const {
- email, password, error, loading, user
+ email, password, error, loading, user 
 } = state.auth
 
   return {
