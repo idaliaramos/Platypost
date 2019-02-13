@@ -18,8 +18,7 @@ class Payment extends React.Component {
         <MainTitle>{postcardConstants.PAYMENT}</MainTitle>
         <StyledImage
           source={{
-            uri:
-              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQJeTjQx0sacbw_JhV-_VodB5U3c-YubFFkHcpW0oAtOejsy7p'
+            uri: `data:${this.props.image.mime};base64,${this.props.image.data}`
           }}
         />
         <BackPostCardComponent
@@ -33,12 +32,13 @@ class Payment extends React.Component {
   }
 }
 const mapStateToProps = state => {
-  const { senderInfo, message, receiverInfo } = state.postCard
-
+  const { senderInfo, message, receiverInfo, image } = state.postCard
+  console.log(image, 'image in payment')
   return {
     senderInfo,
     message,
-    receiverInfo
+    receiverInfo,
+    image
   }
 }
 export default connect(mapStateToProps)(Payment)
