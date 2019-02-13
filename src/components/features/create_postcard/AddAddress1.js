@@ -27,7 +27,7 @@ class AddAddress1 extends Component {
     const info = { name, address }
     if (name && address) {
       addReceiverAddress(info)
-      NavigationService.navigate('ADD_ADDRESS_2')
+      NavigationService.navigate('MESSAGE')
       this.setState({ error: false })
     } else {
       this.setState({ error: true })

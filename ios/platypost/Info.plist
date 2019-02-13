@@ -53,6 +53,12 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>would like access to your photo gallery to select photo for postcard</string>
+	<key>NSCameraUsageDescription</key>
+	<string>would like access to your photo gallery to select photo for postcard</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>would like access to your photo gallery to select photo for postcard</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Handlee-Regular.ttf</string>
