@@ -17,6 +17,9 @@ class Payment extends React.Component {
     NavigationService.navigate('LOGGED_IN')
   }
 
+  // TODO: add logic to image screen where it doesnt continue the flow if
+  // you have alreadhy //visited the payment screen, it brings you back to
+  // the payment screen with the updated image
   render() {
     const { image, receiverInfo, message } = this.props
     return (
@@ -28,9 +31,7 @@ class Payment extends React.Component {
             uri: `data:${image.mime};base64,${image.data}`
           }}
         />
-        //TODO: add logic to image screen where it doesnt continue the flow if
-        you have alreadhy //visited the payment screen, it brings you back to
-        the payment screen with the updated image
+
         <ButtonLink onPress={this.onChangeImage}>Change Image</ButtonLink>
         <BackPostCardComponent info={receiverInfo} message={message} />
         <Text style={{ textAlign: 'right' }}> Total: 1.99</Text>

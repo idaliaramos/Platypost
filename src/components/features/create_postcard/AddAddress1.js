@@ -38,7 +38,7 @@ class AddAddress1 extends Component {
     const name = receiverName || receiverInfo.name
     const address = receiverAddress || receiverInfo.address
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <View style={{ flex: 2, alignItems: 'center', justifyContent: 'center' }}>
         <Text>{postcardConstants.RECEIVER_ADDRESS}</Text>
         <Container>
           <StyledFormLabel>Name</StyledFormLabel>
