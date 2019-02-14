@@ -18,9 +18,7 @@ import validatePassword from './utils/LoginUtils'
 
 class LoginScreen extends Component {
   state = {
-    // showPassword: false,
     passwordError: false
-    // emailError: false
   }
 
   onSubmit = () => {
@@ -93,7 +91,7 @@ class LoginScreen extends Component {
 }
 const mapStateToProps = state => {
   const {
- email, password, error, loading, user 
+ email, password, error, loading, user
 } = state.auth
 
   return {
