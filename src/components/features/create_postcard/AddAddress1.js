@@ -17,10 +17,8 @@ class AddAddress1 extends Component {
   }
 
   onSubmit = () => {
-    console.log('this.state', this.state)
     const { receiverName, receiverAddress } = this.state
     const { receiverInfo, addReceiverAddress } = this.props
-    console.log(receiverInfo, 'receiverInfo')
     // TODO: add more validation
     const name = receiverName || receiverInfo.name
     const address = receiverAddress || receiverInfo.address
@@ -37,6 +35,8 @@ class AddAddress1 extends Component {
   render() {
     const { receiverName, receiverAddress } = this.state
     const { receiverInfo } = this.props
+    const name = receiverName || receiverInfo.name
+    const address = receiverAddress || receiverInfo.address
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Text>{postcardConstants.RECEIVER_ADDRESS}</Text>
@@ -52,7 +52,9 @@ class AddAddress1 extends Component {
             value={receiverAddress || receiverInfo.address}
           />
         </Container>
-        <Button onPress={this.onSubmit}>{postcardConstants.NEXT}</Button>
+        <Button disabled={!name && !address} onPress={this.onSubmit}>
+          {postcardConstants.NEXT}
+        </Button>
       </View>
     )
   }
