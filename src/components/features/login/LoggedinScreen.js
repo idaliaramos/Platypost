@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 // import ImagePicker from 'react-native-image-picker'
 import ImagePicker from 'react-native-image-crop-picker'
 import Button from '../../common/Button'
+import ButtonLink from '../../common/ButtonLink'
 import CenteredContainer from '../../common/CenteredContainer'
 import * as NavigationService from '../../../../NavigationService'
 import * as postcardConstants from '../../../constants/create_postcard/PostcardConstants'
@@ -50,14 +51,19 @@ class LoggedinScreen extends Component {
       <View style={{ alignItems: 'center' }}>
         <Text>{postcardConstants.UPLOAD_IMAGE}</Text>
         <Image
-          style={{ width: 500, height: 300, backgroundColor: 'grey' }}
+          style={{
+            width: 500,
+            height: 300,
+            backgroundImage:
+              'https://www.grouphealth.ca/wp-content/uploads/2018/05/placeholder-image-600x450.png'
+          }}
           source={{
             uri: `data:${image.mime};base64,${image.data}`
           }}
         />
-        <Button onPress={this.onUploadImage}>
+        <ButtonLink onPress={this.onUploadImage}>
           {!image ? 'upload image' : 'change image'}
-        </Button>
+        </ButtonLink>
         {image ? <Button onPress={this.onSubmit}>Next</Button> : null}
       </View>
     )
