@@ -6,5 +6,6 @@ const MainTitle = styled.Text`
   font-weight: bold;
   text-align: center;
   margin-bottom: 30px;
+  margin-top:50px;
 `
 export default MainTitle

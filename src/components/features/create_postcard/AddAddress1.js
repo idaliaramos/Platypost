@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Text, View } from 'react-native'
+import MainTitle from '../../common/MainTitle'
+import GeneralContainer from '../../common/GeneralContainer'
 import Button from '../../common/Button'
 import Container from '../../common/Container'
 import StyledInput from '../../common/StyledInput'
@@ -38,8 +40,9 @@ class AddAddress1 extends Component {
     const name = receiverName || receiverInfo.name
     const address = receiverAddress || receiverInfo.address
     return (
-      <View style={{ flex: 2, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>{postcardConstants.RECEIVER_ADDRESS}</Text>
+      <GeneralContainer>
+        <Text/>
+        <MainTitle>{postcardConstants.RECEIVER_ADDRESS}</MainTitle>
         <Container>
           <StyledFormLabel>Name</StyledFormLabel>
           <StyledInput
@@ -55,7 +58,7 @@ class AddAddress1 extends Component {
         <Button disabled={!name && !address} onPress={this.onSubmit}>
           {postcardConstants.NEXT}
         </Button>
-      </View>
+      </GeneralContainer>
     )
   }
 }

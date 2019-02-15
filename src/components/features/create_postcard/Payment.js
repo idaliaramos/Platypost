@@ -24,7 +24,6 @@ class Payment extends React.Component {
     const { image, receiverInfo, message } = this.props
     return (
       <GeneralContainer>
-        <Text />
         <MainTitle>{postcardConstants.PAYMENT}</MainTitle>
         <StyledImage
           source={{

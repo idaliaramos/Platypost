@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Text, View } from 'react-native'
+import GeneralContainer from '../../common/GeneralContainer'
+import MainTitle from '../../common/MainTitle'
 import Button from '../../common/Button'
 import Container from '../../common/Container'
 import StyledInput from '../../common/StyledInput'
@@ -23,8 +25,9 @@ class Message extends Component {
   render() {
     const { message } = this.state
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>{postcardConstants.ENTER_MESSAGE}</Text>
+      // <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <GeneralContainer>
+        <MainTitle>{postcardConstants.ENTER_MESSAGE}</MainTitle>
         <Container>
           {/* <StyledFormLabel>Enter Message</StyledFormLabel> */}
           <StyledInput
@@ -37,7 +40,8 @@ class Message extends Component {
           />
         </Container>
         <Button onPress={this.onSubmit}>{postcardConstants.NEXT}</Button>
-      </View>
+</GeneralContainer>
+      // </View>
     )
   }
 }

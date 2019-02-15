@@ -34,7 +34,8 @@ class AddAddress2 extends Component {
     const { senderName, address } = this.state
     const { senderInfo } = this.props
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      // <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+<GeneralContainer>
         <Text>{postcardConstants.SENDER_ADDRESS}</Text>
         <Container>
           <StyledFormLabel>Name</StyledFormLabel>
@@ -49,7 +50,8 @@ class AddAddress2 extends Component {
           />
         </Container>
         <Button onPress={this.onSubmit}>{postcardConstants.NEXT}</Button>
-      </View>
+</GeneralContainer>
+
     )
   }
 }

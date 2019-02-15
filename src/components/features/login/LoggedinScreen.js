@@ -72,7 +72,7 @@ class LoggedinScreen extends Component {
     const { image } = this.state
     return (
       <View style={{ alignItems: 'center' }}>
-        <MainTitle style={{ marginTop: 50 }}>
+        <MainTitle >
           {postcardConstants.UPLOAD_IMAGE}
         </MainTitle>
         <Image
