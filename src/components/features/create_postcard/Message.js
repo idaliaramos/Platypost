@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Text, View } from 'react-native'
+import BottomButtonView from '../../common/BottomButtonView'
 import GeneralContainer from '../../common/GeneralContainer'
 import MainTitle from '../../common/MainTitle'
 import Button from '../../common/Button'
@@ -26,7 +27,7 @@ class Message extends Component {
     const { message } = this.state
     return (
       // <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <GeneralContainer>
+    <GeneralContainer>
         <MainTitle>{postcardConstants.ENTER_MESSAGE}</MainTitle>
         <Container>
           {/* <StyledFormLabel>Enter Message</StyledFormLabel> */}
@@ -36,11 +37,13 @@ class Message extends Component {
             multiline
             numberOfLines={6}
             editable
-            maxLength={40}
+            maxLength={400}
           />
         </Container>
-        <Button onPress={this.onSubmit}>{postcardConstants.NEXT}</Button>
-</GeneralContainer>
+        <BottomButtonView>
+          <Button onPress={this.onSubmit}>{postcardConstants.NEXT}</Button>
+      </BottomButtonView>
+  </GeneralContainer>
       // </View>
     )
   }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Text, View } from 'react-native'
+import { Text, View,StyleSheet } from 'react-native'
+import BottomButtonView from '../../common/BottomButtonView'
 import MainTitle from '../../common/MainTitle'
 import GeneralContainer from '../../common/GeneralContainer'
 import Button from '../../common/Button'
@@ -55,13 +56,21 @@ class AddAddress1 extends Component {
             value={receiverAddress || receiverInfo.address}
           />
         </Container>
-        <Button disabled={!name && !address} onPress={this.onSubmit}>
-          {postcardConstants.NEXT}
-        </Button>
+
+
+    <BottomButtonView>
+
+                <Button disabled={!name && !address} onPress={this.onSubmit}>
+                  {postcardConstants.NEXT}
+                </Button>
+    </BottomButtonView>
+
       </GeneralContainer>
+
     )
   }
 }
+
 
 const mapStateToProps = state => {
   const { receiverInfo } = state.postCard

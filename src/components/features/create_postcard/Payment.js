@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Text, View } from 'react-native'
 import Button from '../../common/Button'
+import BottomButtonView from '../../common/BottomButtonView'
 import ButtonLink from '../../common/ButtonLink'
 import GeneralContainer from '../../common/GeneralContainer'
 import StyledImage from '../../common/StyledImage'
@@ -34,7 +35,9 @@ class Payment extends React.Component {
         <ButtonLink onPress={this.onChangeImage}>Change Image</ButtonLink>
         <BackPostCardComponent info={receiverInfo} message={message} />
         <Text style={{ textAlign: 'right' }}> Total: 1.99</Text>
+      <BottomButtonView>
         <Button onPress={this.onSubmit}>{postcardConstants.PAY}</Button>
+      </BottomButtonView>
       </GeneralContainer>
     )
   }

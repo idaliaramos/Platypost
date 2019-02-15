@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 import { Text, View, Image } from 'react-native'
 import { connect } from 'react-redux'
+import BottomButtonView from '../../common/BottomButtonView'
 import Permissions from 'react-native-permissions'
 import ImagePicker from 'react-native-image-crop-picker'
 import MainTitle from '../../common/MainTitle'
 import Button from '../../common/Button'
 import ButtonLink from '../../common/ButtonLink'
 import CenteredContainer from '../../common/CenteredContainer'
+import GeneralContainer from '../../common/GeneralContainer'
 import * as NavigationService from '../../../../NavigationService'
 import * as postcardConstants from '../../../constants/create_postcard/PostcardConstants'
 import { addImage } from '../../../redux/actions/create_postcard'
@@ -71,7 +73,7 @@ class LoggedinScreen extends Component {
   render() {
     const { image } = this.state
     return (
-      <View style={{ alignItems: 'center' }}>
+      <GeneralContainer>
         <MainTitle >
           {postcardConstants.UPLOAD_IMAGE}
         </MainTitle>
@@ -89,8 +91,10 @@ class LoggedinScreen extends Component {
         <ButtonLink onPress={this.onUploadImage}>
           {!image ? 'upload image' : 'change image'}
         </ButtonLink>
+      <BottomButtonView>
         {image ? <Button onPress={this.onSubmit}>Next</Button> : null}
-      </View>
+      </BottomButtonView>
+    </GeneralContainer>
     )
   }
 }
