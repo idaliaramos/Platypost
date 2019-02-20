@@ -40,6 +40,8 @@ class AddAddress1 extends Component {
     const { receiverInfo } = this.props
     const name = receiverName || receiverInfo.name
     const address = receiverAddress || receiverInfo.address
+
+
     return (
       <GeneralContainer>
         <Text/>
@@ -48,7 +50,7 @@ class AddAddress1 extends Component {
           <StyledFormLabel>Name</StyledFormLabel>
           <StyledInput
             onChangeText={text => this.setState({ receiverName: text })}
-            value={receiverName || receiverInfo.name}
+            value={receiverName === undefined ? receiverInfo.name : receiverName}
           />
           <StyledFormLabel>Address</StyledFormLabel>
           <StyledInput
