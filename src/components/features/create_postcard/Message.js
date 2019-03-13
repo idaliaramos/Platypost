@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Text, View } from 'react-native'
+import BottomButtonView from '../../common/BottomButtonView'
+import GeneralContainer from '../../common/GeneralContainer'
+import MainTitle from '../../common/MainTitle'
 import Button from '../../common/Button'
 import Container from '../../common/Container'
-import StyledInput from '../../common/StyledInput'
+import StyledTextBox from '../../common/StyledTextBox'
 import * as postcardConstants from '../../../constants/create_postcard/PostcardConstants'
 import * as NavigationService from '../../../../NavigationService'
 import { addMessage } from '../../../redux/actions/create_postcard'
@@ -23,21 +26,25 @@ class Message extends Component {
   render() {
     const { message } = this.state
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>{postcardConstants.ENTER_MESSAGE}</Text>
+      // <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <GeneralContainer>
+        <MainTitle>{postcardConstants.ENTER_MESSAGE}</MainTitle>
         <Container>
           {/* <StyledFormLabel>Enter Message</StyledFormLabel> */}
-          <StyledInput
+          <StyledTextBox
             onChangeText={text => this.setState({ message: text })}
             value={message || this.props.message}
             multiline
             numberOfLines={6}
             editable
-            maxLength={40}
+            maxLength={400}
           />
         </Container>
-        <Button onPress={this.onSubmit}>{postcardConstants.NEXT}</Button>
-      </View>
+        <BottomButtonView>
+          <Button onPress={this.onSubmit}>{postcardConstants.NEXT}</Button>
+      </BottomButtonView>
+  </GeneralContainer>
+      // </View>
     )
   }
 }

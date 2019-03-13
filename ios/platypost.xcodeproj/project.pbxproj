@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -37,6 +36,7 @@
 		2D16E6881FA4F8E400B85C8A /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D16E6891FA4F8E400B85C8A /* libReact.a */; };
 		2DCD954D1E0B4F2C00145EB5 /* platypostTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* platypostTests.m */; };
 		2DF0FFEE2056DD460020B375 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3EA31DF850E9000B6D8A /* libReact.a */; };
+		354C08316E4844D29F6D478A /* libReactNativePermissions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE356AA4B538486390C90590 /* libReactNativePermissions.a */; };
 		793EFC03D7384999976213EA /* Handlee-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F685E3CCCC674BA98C6984CF /* Handlee-Regular.ttf */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		85817B60016E40CFB3EDFC57 /* libimageCropPicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3D1658839A040ED901F2296 /* libimageCropPicker.a */; };
@@ -360,6 +360,13 @@
 			remoteGlobalIDString = 2D2A28471D9B043800D4039D;
 			remoteInfo = "RNLanguages-tvOS";
 		};
+		AC6E511222163830003E5D0F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DD7EEAB2DA1E4C43A03852B8 /* ReactNativePermissions.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9D23B34F1C767B80008B4819;
+			remoteInfo = ReactNativePermissions;
+		};
 		ADBDB9261DFEBF0700ED6528 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */;
@@ -422,6 +429,8 @@
 		AC016354221207C8001CB647 /* QBImagePicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = QBImagePicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACB3F1090E0044178F8E8C03 /* libRNGestureHandler.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNGestureHandler.a; sourceTree = "<group>"; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
+		CE356AA4B538486390C90590 /* libReactNativePermissions.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libReactNativePermissions.a; sourceTree = "<group>"; };
+		DD7EEAB2DA1E4C43A03852B8 /* ReactNativePermissions.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = ReactNativePermissions.xcodeproj; path = "../node_modules/react-native-permissions/ios/ReactNativePermissions.xcodeproj"; sourceTree = "<group>"; };
 		E3E25682746047C29960B19C /* libRNLanguages-tvOS.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = "libRNLanguages-tvOS.a"; sourceTree = "<group>"; };
 		ED84166A4BBE442DAC6BFF58 /* libRCTImageResizer.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTImageResizer.a; sourceTree = "<group>"; };
 		F685E3CCCC674BA98C6984CF /* Handlee-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Handlee-Regular.ttf"; path = "../assets/fonts/Handlee-Regular.ttf"; sourceTree = "<group>"; };
@@ -459,6 +468,7 @@
 				E45BAD3A1F534C558337418F /* libRCTImageResizer.a in Frameworks */,
 				972D03104E334B31932F701D /* libRNImagePicker.a in Frameworks */,
 				85817B60016E40CFB3EDFC57 /* libimageCropPicker.a in Frameworks */,
+				354C08316E4844D29F6D478A /* libReactNativePermissions.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -651,6 +661,7 @@
 				6E1CDC9739CB439FA2149CF2 /* RCTImageResizer.xcodeproj */,
 				09861F75F9B640958607E0B8 /* RNImagePicker.xcodeproj */,
 				9C89833C11AC4B2CBDA14FCF /* imageCropPicker.xcodeproj */,
+				DD7EEAB2DA1E4C43A03852B8 /* ReactNativePermissions.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -718,6 +729,7 @@
 				257245B216FE4C19B4BDE947 /* libRNImagePicker.a */,
 				E3E25682746047C29960B19C /* libRNLanguages-tvOS.a */,
 				A3D1658839A040ED901F2296 /* libimageCropPicker.a */,
+				CE356AA4B538486390C90590 /* libReactNativePermissions.a */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -751,6 +763,14 @@
 			isa = PBXGroup;
 			children = (
 				AC356850220F9F98007D497D /* libRNImagePicker.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AC6E510F22163830003E5D0F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AC6E511322163830003E5D0F /* libReactNativePermissions.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -931,6 +951,10 @@
 				{
 					ProductGroup = 146834001AC3E56700842450 /* Products */;
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+				},
+				{
+					ProductGroup = AC6E510F22163830003E5D0F /* Products */;
+					ProjectRef = DD7EEAB2DA1E4C43A03852B8 /* ReactNativePermissions.xcodeproj */;
 				},
 				{
 					ProductGroup = AC356840220F9F97007D497D /* Products */;
@@ -1250,6 +1274,13 @@
 			remoteRef = AC356855220F9F98007D497D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		AC6E511322163830003E5D0F /* libReactNativePermissions.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libReactNativePermissions.a;
+			remoteRef = AC6E511222163830003E5D0F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1403,12 +1434,14 @@
 					"$(SRCROOT)/../node_modules/react-native-image-resizer/ios/RCTImageResizer",
 					"$(SRCROOT)/../node_modules/react-native-image-picker/ios",
 					"$(SRCROOT)/../node_modules/react-native-image-crop-picker/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-permissions/ios/**",
 				);
 				INFOPLIST_FILE = platypostTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1438,12 +1471,14 @@
 					"$(SRCROOT)/../node_modules/react-native-image-resizer/ios/RCTImageResizer",
 					"$(SRCROOT)/../node_modules/react-native-image-picker/ios",
 					"$(SRCROOT)/../node_modules/react-native-image-crop-picker/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-permissions/ios/**",
 				);
 				INFOPLIST_FILE = platypostTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1474,6 +1509,7 @@
 					"$(SRCROOT)/../node_modules/react-native-image-resizer/ios/RCTImageResizer",
 					"$(SRCROOT)/../node_modules/react-native-image-picker/ios",
 					"$(SRCROOT)/../node_modules/react-native-image-crop-picker/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-permissions/ios/**",
 				);
 				INFOPLIST_FILE = platypost/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1500,6 +1536,7 @@
 					"$(SRCROOT)/../node_modules/react-native-image-resizer/ios/RCTImageResizer",
 					"$(SRCROOT)/../node_modules/react-native-image-picker/ios",
 					"$(SRCROOT)/../node_modules/react-native-image-crop-picker/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-permissions/ios/**",
 				);
 				INFOPLIST_FILE = platypost/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1533,11 +1570,13 @@
 					"$(SRCROOT)/../node_modules/react-native-image-resizer/ios/RCTImageResizer",
 					"$(SRCROOT)/../node_modules/react-native-image-picker/ios",
 					"$(SRCROOT)/../node_modules/react-native-image-crop-picker/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-permissions/ios/**",
 				);
 				INFOPLIST_FILE = "platypost-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1576,11 +1615,13 @@
 					"$(SRCROOT)/../node_modules/react-native-image-resizer/ios/RCTImageResizer",
 					"$(SRCROOT)/../node_modules/react-native-image-picker/ios",
 					"$(SRCROOT)/../node_modules/react-native-image-crop-picker/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-permissions/ios/**",
 				);
 				INFOPLIST_FILE = "platypost-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1618,11 +1659,13 @@
 					"$(SRCROOT)/../node_modules/react-native-image-resizer/ios/RCTImageResizer",
 					"$(SRCROOT)/../node_modules/react-native-image-picker/ios",
 					"$(SRCROOT)/../node_modules/react-native-image-crop-picker/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-permissions/ios/**",
 				);
 				INFOPLIST_FILE = "platypost-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -1660,11 +1703,13 @@
 					"$(SRCROOT)/../node_modules/react-native-image-resizer/ios/RCTImageResizer",
 					"$(SRCROOT)/../node_modules/react-native-image-picker/ios",
 					"$(SRCROOT)/../node_modules/react-native-image-crop-picker/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-permissions/ios/**",
 				);
 				INFOPLIST_FILE = "platypost-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",

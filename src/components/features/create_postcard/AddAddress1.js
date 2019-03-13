@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Text, View } from 'react-native'
+import { Text, View,StyleSheet } from 'react-native'
+import BottomButtonView from '../../common/BottomButtonView'
+import MainTitle from '../../common/MainTitle'
+import GeneralContainer from '../../common/GeneralContainer'
 import Button from '../../common/Button'
 import Container from '../../common/Container'
 import StyledInput from '../../common/StyledInput'
@@ -17,10 +20,8 @@ class AddAddress1 extends Component {
   }
 
   onSubmit = () => {
-    console.log('this.state', this.state)
     const { receiverName, receiverAddress } = this.state
     const { receiverInfo, addReceiverAddress } = this.props
-    console.log(receiverInfo, 'receiverInfo')
     // TODO: add more validation
     const name = receiverName || receiverInfo.name
     const address = receiverAddress || receiverInfo.address
@@ -37,14 +38,19 @@ class AddAddress1 extends Component {
   render() {
     const { receiverName, receiverAddress } = this.state
     const { receiverInfo } = this.props
+    const name = receiverName || receiverInfo.name
+    const address = receiverAddress || receiverInfo.address
+
+
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>{postcardConstants.RECEIVER_ADDRESS}</Text>
+      <GeneralContainer>
+        <Text/>
+        <MainTitle>{postcardConstants.RECEIVER_ADDRESS}</MainTitle>
         <Container>
           <StyledFormLabel>Name</StyledFormLabel>
           <StyledInput
             onChangeText={text => this.setState({ receiverName: text })}
-            value={receiverName || receiverInfo.name}
+            value={receiverName === undefined ? receiverInfo.name : receiverName}
           />
           <StyledFormLabel>Address</StyledFormLabel>
           <StyledInput
@@ -52,11 +58,21 @@ class AddAddress1 extends Component {
             value={receiverAddress || receiverInfo.address}
           />
         </Container>
-        <Button onPress={this.onSubmit}>{postcardConstants.NEXT}</Button>
-      </View>
+
+
+    <BottomButtonView>
+
+                <Button disabled={!name && !address} onPress={this.onSubmit}>
+                  {postcardConstants.NEXT}
+                </Button>
+    </BottomButtonView>
+
+      </GeneralContainer>
+
     )
   }
 }
+
 
 const mapStateToProps = state => {
   const { receiverInfo } = state.postCard
