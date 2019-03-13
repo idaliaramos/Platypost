@@ -6,7 +6,7 @@ import GeneralContainer from '../../common/GeneralContainer'
 import MainTitle from '../../common/MainTitle'
 import Button from '../../common/Button'
 import Container from '../../common/Container'
-import StyledInput from '../../common/StyledInput'
+import StyledTextBox from '../../common/StyledTextBox'
 import * as postcardConstants from '../../../constants/create_postcard/PostcardConstants'
 import * as NavigationService from '../../../../NavigationService'
 import { addMessage } from '../../../redux/actions/create_postcard'
@@ -31,7 +31,7 @@ class Message extends Component {
         <MainTitle>{postcardConstants.ENTER_MESSAGE}</MainTitle>
         <Container>
           {/* <StyledFormLabel>Enter Message</StyledFormLabel> */}
-          <StyledInput
+          <StyledTextBox
             onChangeText={text => this.setState({ message: text })}
             value={message || this.props.message}
             multiline

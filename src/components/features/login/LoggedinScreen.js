@@ -22,28 +22,24 @@ class LoggedinScreen extends Component {
   // Check the status of a single permission
   componentDidMount() {
     console.log('component mounted', Permissions)
-    // Permissions.check('photo').then(response => {
-    //   console.log(response, 'response')
-    //   // Response is one of: 'authorized', 'denied', 'restricted', or 'undetermined'
-    //   this.setState({ photoPermission: response })
-    // })
+    Permissions.check('photo').then(response => {
+      console.log(response, 'response')
+      // Response is one of: 'authorized', 'denied', 'restricted', or 'undetermined'
+      this.setState({ photoPermission: response })
+    })
   }
+  //if denied present the no permission, add button to navigate to the setting,
+  //(if ios do this if android do this)
 
+  //once the user has selected an image we will add it to redux, and move them
+  //to add the address
   onSubmit = () => {
     const { addImage } = this.props
     const { image } = this.state
     addImage(image)
     NavigationService.navigate('ADD_ADDRESS_1')
   }
-
-  //should i use check or request? they seem
-  // Permissions.check('photo').then(response => {
-  //   console.log(response, 'response')
-  //   // Response is one of: 'authorized', 'denied', 'restricted', or 'undetermined'
-  //   this.setState({ photoPermission: response })
-  // })
-  // console.log(Permissions.request, 'permits')
-
+    // allows user to select an image from their camera roll after checking access.
   onUploadImage = () => {
       // Request permission to access photos
     Permissions.request('photo').then(response => {
@@ -99,7 +95,6 @@ class LoggedinScreen extends Component {
   }
 }
 
-// Do I need this? I dont thinks so but i need it for connect?
 const mapStateToProps = state => {
   const { image } = state.postCard
 
