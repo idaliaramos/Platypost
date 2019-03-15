@@ -17,6 +17,9 @@ import * as RNLocalize from "react-native-localize";
 import i18n from "i18n-js";
 import memoize from "lodash.memoize";
 
+//the examples shows it as this, though should i use the constants? then have constants
+//for each language like i am doing for FR? Though this code uses a json lookup...
+// Once we chat about what is the best way to proceed I can move on to do all of them
 const translationGetters = {
   // lazy requires (metro bundler does not support symlinks)
   ar: () => require("../android/app/src/main/assets/translations/ar.json"),
