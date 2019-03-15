@@ -12,8 +12,50 @@ import GeneralContainer from '../../common/GeneralContainer'
 import * as NavigationService from '../../../../NavigationService'
 import * as postcardConstants from '../../../constants/create_postcard/PostcardConstants'
 import { addImage } from '../../../redux/actions/create_postcard'
+import {  I18nManager} from 'react-native'
+import * as RNLocalize from "react-native-localize";
+import i18n from "i18n-js";
+import memoize from "lodash.memoize";
 
+const translationGetters = {
+  // lazy requires (metro bundler does not support symlinks)
+  ar: () => require("../android/app/src/main/assets/translations/ar.json"),
+  en: () => require("../android/app/src/main/assets/translations/en.json"),
+  fr: () => require("../android/app/src/main/assets/translations/fr.json"),
+};
+const setI18nConfig = () => {
+  // fallback if no available language fits
+  const fallback = { languageTag: "en", isRTL: false };
+  const { languageTag, isRTL } =
+    RNLocalize.findBestAvailableLanguage(Object.keys(translationGetters)) ||
+    fallback;
+
+  // clear translation cache
+  translate.cache.clear();
+  // update layout direction
+  I18nManager.forceRTL(isRTL);
+
+  // set i18n-js config
+  i18n.translations = { [languageTag]: translationGetters[languageTag]() };
+  i18n.locale = languageTag;
+};
 class LoggedinScreen extends Component {
+
+
+  constructor(props) {
+  super(props);
+  setI18nConfig(); // set initial config
+  }
+
+  componentDidMount() {
+    RNLocalize.addEventListener("change", this.handleLocalizationChange);
+  }
+
+
+  handleLocalizationChange = () => {
+    setI18nConfig();
+    this.forceUpdate();
+  };
   state = {
     image: '',
     photoPermission: ''
@@ -21,9 +63,9 @@ class LoggedinScreen extends Component {
 
   // Check the status of a single permission
   componentDidMount() {
-    console.log('component mounted', Permissions)
+
+    // console.log('LOCALEIS',RNLocalize.getLocales())
     Permissions.check('photo').then(response => {
-      console.log(response, 'response')
       // Response is one of: 'authorized', 'denied', 'restricted', or 'undetermined'
       this.setState({ photoPermission: response })
     })
@@ -71,7 +113,8 @@ class LoggedinScreen extends Component {
     return (
       <GeneralContainer>
         <MainTitle >
-          {postcardConstants.UPLOAD_IMAGE}
+          {/* {postcardConstants.UPLOAD_IMAGE} */}
+          {translate("Upload Image")}
         </MainTitle>
         <Image
           style={{
@@ -88,7 +131,7 @@ class LoggedinScreen extends Component {
           {!image ? 'upload image' : 'change image'}
         </ButtonLink>
       <BottomButtonView>
-        {image ? <Button onPress={this.onSubmit}>Next</Button> : null}
+        {image ? <Button onPress={this.onSubmit}>{translate("Next")}</Button> : null}
       </BottomButtonView>
     </GeneralContainer>
     )
