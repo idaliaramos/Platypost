@@ -11,7 +11,7 @@ import StyledFormLabel from '../../common/StyledFormLabel'
 import * as postcardConstants from '../../../constants/create_postcard/PostcardConstants'
 import * as NavigationService from '../../../../NavigationService'
 import { addReceiverAddress } from '../../../redux/actions/create_postcard'
-
+import { strings } from '../../../i18next/i18n';
 class AddAddress1 extends Component {
   state = {
     receiverAddress: undefined,
@@ -45,14 +45,14 @@ class AddAddress1 extends Component {
     return (
       <GeneralContainer>
         <Text/>
-        <MainTitle>{postcardConstants.RECEIVER_ADDRESS}</MainTitle>
+        <MainTitle>{strings('create_postcard.TO')}</MainTitle>
         <Container>
-          <StyledFormLabel>Name</StyledFormLabel>
+          <StyledFormLabel>{strings('create_postcard.NAME')}</StyledFormLabel>
           <StyledInput
             onChangeText={text => this.setState({ receiverName: text })}
             value={receiverName === undefined ? receiverInfo.name : receiverName}
           />
-          <StyledFormLabel>Address</StyledFormLabel>
+          <StyledFormLabel>{strings('create_postcard.ADDRESS')}</StyledFormLabel>
           <StyledInput
             onChangeText={text => this.setState({ receiverAddress: text })}
             value={receiverAddress || receiverInfo.address}
@@ -63,7 +63,7 @@ class AddAddress1 extends Component {
     <BottomButtonView>
 
                 <Button disabled={!name && !address} onPress={this.onSubmit}>
-                  {postcardConstants.NEXT}
+                  {strings('create_postcard.NEXT')}
                 </Button>
     </BottomButtonView>
 

@@ -12,7 +12,7 @@ import GeneralContainer from '../../common/GeneralContainer'
 import * as NavigationService from '../../../../NavigationService'
 import * as postcardConstants from '../../../constants/create_postcard/PostcardConstants'
 import { addImage } from '../../../redux/actions/create_postcard'
-
+import { strings } from '../../../i18next/i18n';
 class LoggedinScreen extends Component {
   state = {
     image: '',
@@ -21,6 +21,7 @@ class LoggedinScreen extends Component {
 
   // Check the status of a single permission
   componentDidMount() {
+  
     console.log('component mounted', Permissions)
     Permissions.check('photo').then(response => {
       console.log(response, 'response')
@@ -66,12 +67,14 @@ class LoggedinScreen extends Component {
     })
   }
 
+
   render() {
     const { image } = this.state
+
     return (
       <GeneralContainer>
         <MainTitle >
-          {postcardConstants.UPLOAD_IMAGE}
+          {strings('create_postcard.UPLOAD_IMAGE')}
         </MainTitle>
         <Image
           style={{
@@ -88,7 +91,7 @@ class LoggedinScreen extends Component {
           {!image ? 'upload image' : 'change image'}
         </ButtonLink>
       <BottomButtonView>
-        {image ? <Button onPress={this.onSubmit}>Next</Button> : null}
+        {image ? <Button onPress={this.onSubmit}>{strings('create_postcard.NEXT')}</Button> : null}
       </BottomButtonView>
     </GeneralContainer>
     )

@@ -10,7 +10,7 @@ import * as postcardConstants from '../../../constants/create_postcard/PostcardC
 import BackPostCardComponent from '../../common/BackPostcardComponent'
 import MainTitle from '../../common/MainTitle'
 import * as NavigationService from '../../../../NavigationService'
-
+import { strings } from '../../../i18next/i18n';
 class Payment extends React.Component {
   onSubmit = () => {}
 
@@ -25,7 +25,7 @@ class Payment extends React.Component {
     const { image, receiverInfo, message } = this.props
     return (
       <GeneralContainer>
-        <MainTitle>{postcardConstants.PAYMENT}</MainTitle>
+        <MainTitle>{strings('create_postcard.PAYMENT')}</MainTitle>
         <StyledImage
           source={{
             uri: `data:${image.mime};base64,${image.data}`
@@ -36,7 +36,7 @@ class Payment extends React.Component {
         <BackPostCardComponent info={receiverInfo} message={message} />
         <Text style={{ textAlign: 'right' }}> Total: 1.99</Text>
       <BottomButtonView>
-        <Button onPress={this.onSubmit}>{postcardConstants.PAY}</Button>
+        <Button onPress={this.onSubmit}>{strings('create_postcard.PAY')}</Button>
       </BottomButtonView>
       </GeneralContainer>
     )

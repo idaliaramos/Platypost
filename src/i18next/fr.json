@@ -1,0 +1,24 @@
+{
+  "login": {
+    "welcome": "Welcome  to our localized app!",
+    "login_button": "Login",
+    "signup_button": "Sign Up"
+  },
+  "user_profile": {
+    "title": "Your Profile"
+  },
+  "create_postcard": {
+    "ADDRESS": "Address",
+    "MESSAGE": "Message",
+    "UPLOAD_IMAGE": "télécharger une image",
+    "NEXT": "Suivant",
+    "TOTAL": "Total",
+    "ENTER_MESSAGE": "Entrer un message",
+    "TO": "À",
+    "NAME": "Prenom",
+    "ADDRESS": "Adresse",
+    "PAYMENT": "Paiement",
+    "PAY": "Payer"
+  }
+
+}

@@ -10,7 +10,7 @@ import StyledTextBox from '../../common/StyledTextBox'
 import * as postcardConstants from '../../../constants/create_postcard/PostcardConstants'
 import * as NavigationService from '../../../../NavigationService'
 import { addMessage } from '../../../redux/actions/create_postcard'
-
+import { strings } from '../../../i18next/i18n';
 class Message extends Component {
   state = {
     message: ''
@@ -28,7 +28,7 @@ class Message extends Component {
     return (
       // <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
     <GeneralContainer>
-        <MainTitle>{postcardConstants.ENTER_MESSAGE}</MainTitle>
+        <MainTitle>{strings('create_postcard.MESSAGE')}</MainTitle>
         <Container>
           {/* <StyledFormLabel>Enter Message</StyledFormLabel> */}
           <StyledTextBox
@@ -41,7 +41,7 @@ class Message extends Component {
           />
         </Container>
         <BottomButtonView>
-          <Button onPress={this.onSubmit}>{postcardConstants.NEXT}</Button>
+          <Button onPress={this.onSubmit}>{strings('create_postcard.NEXT')}</Button>
       </BottomButtonView>
   </GeneralContainer>
       // </View>
