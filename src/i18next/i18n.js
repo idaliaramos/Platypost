@@ -5,14 +5,15 @@ import I18n from 'react-native-i18n';
 import en from './en.json';
 import he from './he.json';
 import fr from './fr.json'
+import hun from './hun.json'
 // Should the app fallback to English if user locale doesn't exists
 I18n.fallbacks = true;
-I18n.locale = 'fr';
 // Define the supported translations
 I18n.translations = {
   en,
   he,
-  fr
+  fr,
+  hun
 };
 
 const currentLocale = I18n.currentLocale();
@@ -22,7 +23,7 @@ export const isRTL = currentLocale.indexOf('he') === 0 || currentLocale.indexOf(
 
 // Allow RTL alignment in RTL languages
 ReactNative.I18nManager.allowRTL(isRTL);
-I18n.locale = 'fr';
+I18n.locale = 'hun';
 // The method we'll use instead of a regular string
 export function strings(name, params = {}) {
   return I18n.t(name, params);

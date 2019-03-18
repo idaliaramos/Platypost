@@ -1,0 +1,15 @@
+{
+  "create_postcard": {
+    "ADDRESS": "Cím",
+    "MESSAGE": "Üzenet",
+    "UPLOAD_IMAGE": "Kép Feltöltése",
+    "NEXT": "Következő",
+    "TOTAL": "Teljes",
+    "ENTER_MESSAGE": "Írjon be egy üzenetet",
+    "TO": "Nak nek",
+    "NAME": "Név",
+    "PAYMENT": "Fizetés",
+    "CHANGE_IMAGE": "Kép Megváltoztatása"
+  },
+
+}

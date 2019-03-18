@@ -17,7 +17,8 @@
     "TO": "To",
     "NAME": "Name",
     "ADDRESS": "Address",
-    "PAYMENT": "Payment"
+    "PAYMENT": "Payment",
+    "CHANGE_IMAGE":"Change Image"
   },
 
 }
