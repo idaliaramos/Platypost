@@ -1,11 +1,11 @@
 {
   "login": {
-    "welcome": "Welcome  to our localized app!",
-    "login_button": "Login",
-    "signup_button": "Sign Up"
-  },
-  "user_profile": {
-    "title": "Your Profile"
+    "SIGN_IN" : "Sign In",
+    "LOG_IN": "Log In",
+    "EMAIL ": "Email",
+    "PASSWORD" : "Password",
+    "SUBMIT" : "Submit",
+    "PASSWORD_ERROR" : "Password must be at least 6 characters",
   },
   "create_postcard": {
     "ADDRESS": "Address",
