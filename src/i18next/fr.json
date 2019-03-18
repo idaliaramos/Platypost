@@ -18,7 +18,8 @@
     "NAME": "Prenom",
     "ADDRESS": "Adresse",
     "PAYMENT": "Paiement",
-    "PAY": "Payer"
+    "PAY": "Payer",
+    "CHANGE_IMAGE": "Changer l'image"
   }
 
 }

@@ -21,7 +21,7 @@ class LoggedinScreen extends Component {
 
   // Check the status of a single permission
   componentDidMount() {
-  
+
     console.log('component mounted', Permissions)
     Permissions.check('photo').then(response => {
       console.log(response, 'response')
@@ -88,7 +88,7 @@ class LoggedinScreen extends Component {
           }}
         />
         <ButtonLink onPress={this.onUploadImage}>
-          {!image ? 'upload image' : 'change image'}
+          {!image ? strings('create_postcard.UPLOAD_IMAGE') : strings('create_postcard.CHANGE_IMAGE')}
         </ButtonLink>
       <BottomButtonView>
         {image ? <Button onPress={this.onSubmit}>{strings('create_postcard.NEXT')}</Button> : null}
