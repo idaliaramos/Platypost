@@ -1,6 +1,5 @@
 import React from 'react'
 import { View, Text } from 'react-native'
-import MainTitle from './MainTitle'
 import PostCardContainer from './PostCardContainer'
 import { Fonts } from '../../utils/Fonts'
 import AddressReviewComponent from './AddressReviewComponent'
