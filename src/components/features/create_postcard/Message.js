@@ -25,11 +25,9 @@ class Message extends Component {
   render() {
     const { message } = this.state
     return (
-      // <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <GeneralContainer>
         <MainTitle>{strings('create_postcard.MESSAGE')}</MainTitle>
         <Container>
-          {/* <StyledFormLabel>Enter Message</StyledFormLabel> */}
           <StyledTextBox
             onChangeText={text => this.setState({ message: text })}
             value={message || this.props.message}
