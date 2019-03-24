@@ -1,16 +1,15 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Text, View } from 'react-native'
 import BottomButtonView from '../../common/BottomButtonView'
 import GeneralContainer from '../../common/GeneralContainer'
 import MainTitle from '../../common/MainTitle'
 import Button from '../../common/Button'
 import Container from '../../common/Container'
 import StyledTextBox from '../../common/StyledTextBox'
-import * as postcardConstants from '../../../constants/create_postcard/PostcardConstants'
 import * as NavigationService from '../../../../NavigationService'
 import { addMessage } from '../../../redux/actions/create_postcard'
-import { strings } from '../../../i18next/i18n';
+import { strings } from '../../../i18next/i18n'
+
 class Message extends Component {
   state = {
     message: ''
@@ -27,7 +26,7 @@ class Message extends Component {
     const { message } = this.state
     return (
       // <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-    <GeneralContainer>
+      <GeneralContainer>
         <MainTitle>{strings('create_postcard.MESSAGE')}</MainTitle>
         <Container>
           {/* <StyledFormLabel>Enter Message</StyledFormLabel> */}
@@ -41,9 +40,11 @@ class Message extends Component {
           />
         </Container>
         <BottomButtonView>
-          <Button onPress={this.onSubmit}>{strings('create_postcard.NEXT')}</Button>
-      </BottomButtonView>
-  </GeneralContainer>
+          <Button onPress={this.onSubmit}>
+            {strings('create_postcard.NEXT')}
+          </Button>
+        </BottomButtonView>
+      </GeneralContainer>
       // </View>
     )
   }

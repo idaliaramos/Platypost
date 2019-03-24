@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Text, View,StyleSheet } from 'react-native'
+import { Text } from 'react-native'
 import BottomButtonView from '../../common/BottomButtonView'
 import MainTitle from '../../common/MainTitle'
 import GeneralContainer from '../../common/GeneralContainer'
@@ -8,10 +8,10 @@ import Button from '../../common/Button'
 import Container from '../../common/Container'
 import StyledInput from '../../common/StyledInput'
 import StyledFormLabel from '../../common/StyledFormLabel'
-import * as postcardConstants from '../../../constants/create_postcard/PostcardConstants'
 import * as NavigationService from '../../../../NavigationService'
 import { addReceiverAddress } from '../../../redux/actions/create_postcard'
-import { strings } from '../../../i18next/i18n';
+import { strings } from '../../../i18next/i18n'
+
 class AddAddress1 extends Component {
   state = {
     receiverAddress: undefined,
@@ -41,38 +41,36 @@ class AddAddress1 extends Component {
     const name = receiverName || receiverInfo.name
     const address = receiverAddress || receiverInfo.address
 
-
     return (
       <GeneralContainer>
-        <Text/>
+        <Text />
         <MainTitle>{strings('create_postcard.TO')}</MainTitle>
         <Container>
           <StyledFormLabel>{strings('create_postcard.NAME')}</StyledFormLabel>
           <StyledInput
             onChangeText={text => this.setState({ receiverName: text })}
-            value={receiverName === undefined ? receiverInfo.name : receiverName}
+            value={
+              receiverName === undefined ? receiverInfo.name : receiverName
+            }
           />
-          <StyledFormLabel>{strings('create_postcard.ADDRESS')}</StyledFormLabel>
+          <StyledFormLabel>
+            {strings('create_postcard.ADDRESS')}
+          </StyledFormLabel>
           <StyledInput
             onChangeText={text => this.setState({ receiverAddress: text })}
             value={receiverAddress || receiverInfo.address}
           />
         </Container>
 
-
-    <BottomButtonView>
-
-                <Button disabled={!name && !address} onPress={this.onSubmit}>
-                  {strings('create_postcard.NEXT')}
-                </Button>
-    </BottomButtonView>
-
+        <BottomButtonView>
+          <Button disabled={!name && !address} onPress={this.onSubmit}>
+            {strings('create_postcard.NEXT')}
+          </Button>
+        </BottomButtonView>
       </GeneralContainer>
-
     )
   }
 }
-
 
 const mapStateToProps = state => {
   const { receiverInfo } = state.postCard
