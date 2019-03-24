@@ -89,9 +89,7 @@ class LoginScreen extends Component {
   }
 }
 const mapStateToProps = state => {
-  const {
- email, password, error, loading, user 
-} = state.auth
+  const { email, password, error, loading, user } = state.auth
 
   return {
     email,

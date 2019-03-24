@@ -16,8 +16,7 @@ const BackPostCardComponent = ({ info, message }) => (
       borderTopColor: '#EAEAEA',
       borderBottomColor: 'grey',
       blurRadius: 1
-    }}
-  >
+    }}>
     <View style={{ flexDirection: 'row' }}>
       <View style={{ flex: 2 }}>
         <Text
@@ -27,8 +26,7 @@ const BackPostCardComponent = ({ info, message }) => (
             marginTop: 25,
             fontSize: 12,
             fontFamily: Fonts.Handlee
-          }}
-        >
+          }}>
           {message}
         </Text>
       </View>
@@ -39,8 +37,7 @@ const BackPostCardComponent = ({ info, message }) => (
 
           marginTop: 70,
           fontSize: 2
-        }}
-      >
+        }}>
         <AddressReviewComponent info={info} />
       </View>
     </View>
