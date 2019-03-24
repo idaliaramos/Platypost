@@ -12,7 +12,6 @@ import StyledFormLabel from '../../common/StyledFormLabel'
 import CenteredContainer from '../../common/CenteredContainer'
 import MainTitle from '../../common/MainTitle'
 import Container from '../../common/Container'
-import PasswordInput from '../../common/PasswordInput'
 import Spinner from '../../common/Spinner'
 import validatePassword from './utils/LoginUtils'
 
@@ -91,7 +90,7 @@ class LoginScreen extends Component {
 }
 const mapStateToProps = state => {
   const {
- email, password, error, loading, user
+ email, password, error, loading, user 
 } = state.auth
 
   return {

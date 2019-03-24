@@ -18,8 +18,8 @@ import {
 } from './src/constants/navigation/NavigationConstants'
 
 const MainNavigator = createStackNavigator({
-  // MAIN: { screen: LoginScreen },
-  MAIN: { screen: LoggedinScreen },
+  MAIN: { screen: LoginScreen },
+  // MAIN: { screen: LoggedinScreen },
   LOGGED_IN: {
     screen: LoggedinScreen
   },

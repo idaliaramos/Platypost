@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, TouchableOpacity } from 'react-native'
+import { Text } from 'react-native'
 import styled from 'styled-components'
 
 const ButtonContainer = styled.TouchableOpacity`
@@ -15,5 +15,5 @@ const PasswordButton = ({ children, onPress }) => (
   <ButtonContainer onPress={onPress}>
     <Text>{children}</Text>
   </ButtonContainer>
-  )
+)
 export default PasswordButton

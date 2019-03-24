@@ -6,11 +6,11 @@ import BottomButtonView from '../../common/BottomButtonView'
 import ButtonLink from '../../common/ButtonLink'
 import GeneralContainer from '../../common/GeneralContainer'
 import StyledImage from '../../common/StyledImage'
-import * as postcardConstants from '../../../constants/create_postcard/PostcardConstants'
 import BackPostCardComponent from '../../common/BackPostcardComponent'
 import MainTitle from '../../common/MainTitle'
 import * as NavigationService from '../../../../NavigationService'
-import { strings } from '../../../i18next/i18n';
+import { strings } from '../../../i18next/i18n'
+
 class Payment extends React.Component {
   onSubmit = () => {}
 
@@ -35,9 +35,11 @@ class Payment extends React.Component {
         <ButtonLink onPress={this.onChangeImage}>Change Image</ButtonLink>
         <BackPostCardComponent info={receiverInfo} message={message} />
         <Text style={{ textAlign: 'right' }}> Total: 1.99</Text>
-      <BottomButtonView>
-        <Button onPress={this.onSubmit}>{strings('create_postcard.PAY')}</Button>
-      </BottomButtonView>
+        <BottomButtonView>
+          <Button onPress={this.onSubmit}>
+            {strings('create_postcard.PAY')}
+          </Button>
+        </BottomButtonView>
       </GeneralContainer>
     )
   }

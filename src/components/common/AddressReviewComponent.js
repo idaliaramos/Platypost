@@ -1,6 +1,5 @@
 import React from 'react'
 import { View, Text } from 'react-native'
-import MainTitle from './MainTitle'
 
 const AddressReviewComponent = ({ info }) => {
   const { name, address } = info

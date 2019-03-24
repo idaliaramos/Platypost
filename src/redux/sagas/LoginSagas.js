@@ -1,5 +1,5 @@
 import { takeLatest, all, put, call } from 'redux-saga/effects'
-import { REQUEST_API_DATA, LOGIN_USER_START } from '../actions/login/types'
+import { REQUEST_API_DATA } from '../actions/login/types'
 import {
   loginUserSuccess,
   loginUserStart,

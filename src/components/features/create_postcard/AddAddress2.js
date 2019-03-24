@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Text, View } from 'react-native'
+import { Text } from 'react-native'
 import Button from '../../common/Button'
 import Container from '../../common/Container'
+import GeneralContainer from '../../common/GeneralContainer'
 import StyledInput from '../../common/StyledInput'
 import StyledFormLabel from '../../common/StyledFormLabel'
 import * as postcardConstants from '../../../constants/create_postcard/PostcardConstants'
@@ -35,7 +36,7 @@ class AddAddress2 extends Component {
     const { senderInfo } = this.props
     return (
       // <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-<GeneralContainer>
+      <GeneralContainer>
         <Text>{postcardConstants.SENDER_ADDRESS}</Text>
         <Container>
           <StyledFormLabel>Name</StyledFormLabel>
@@ -50,8 +51,7 @@ class AddAddress2 extends Component {
           />
         </Container>
         <Button onPress={this.onSubmit}>{postcardConstants.NEXT}</Button>
-</GeneralContainer>
-
+      </GeneralContainer>
     )
   }
 }

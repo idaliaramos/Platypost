@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, TouchableOpacity } from 'react-native'
+import { Text } from 'react-native'
 import styled, { css } from 'styled-components'
 
 const ButtonContainer = styled.TouchableOpacity`
