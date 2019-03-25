@@ -1,4 +1,4 @@
-import styled from 'styled-components/native'
+import styled from 'styled-components/native';
 
 const StyledTextBox = styled.TextInput`
   height: 200;
@@ -6,5 +6,5 @@ const StyledTextBox = styled.TextInput`
   border-width: 1px;
   border-color: grey;
   border-radius: 5;
-`
-export default StyledTextBox
+`;
+export default StyledTextBox;

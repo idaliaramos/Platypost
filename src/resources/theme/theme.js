@@ -1,3 +1,3 @@
 const theme = {
-  primaryColor: '#00cc99'
-}
+  primaryColor: '#00cc99',
+};

@@ -1,4 +1,4 @@
-import styled from 'styled-components/native'
+import styled from 'styled-components/native';
 
 const BottomButtonView = styled.View`
   position: absolute;
@@ -6,5 +6,5 @@ const BottomButtonView = styled.View`
   left: 0;
   right: 0;
   align-items: center;
-`
-export default BottomButtonView
+`;
+export default BottomButtonView;

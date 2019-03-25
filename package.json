@@ -53,10 +53,5 @@
   },
   "jest": {
     "preset": "react-native"
-  },
-  "prettier": {
-    "jsxBracketSameLine": true,
-    "semi": false,
-    "singleQuote": true
   }
 }

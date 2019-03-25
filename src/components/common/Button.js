@@ -1,6 +1,6 @@
-import React from 'react'
-import { Text } from 'react-native'
-import styled, { css } from 'styled-components'
+import React from 'react';
+import { Text } from 'react-native';
+import styled, { css } from 'styled-components';
 
 const ButtonContainer = styled.TouchableOpacity`
   background-color: #00cc99;
@@ -17,10 +17,10 @@ const ButtonContainer = styled.TouchableOpacity`
       background: #d0f4eb;
       color: black;
     `}
-`
+`;
 const Button = ({ children, onPress, disabled }) => (
   <ButtonContainer disabled={disabled} onPress={onPress}>
     <Text>{children}</Text>
   </ButtonContainer>
-)
-export default Button
+);
+export default Button;

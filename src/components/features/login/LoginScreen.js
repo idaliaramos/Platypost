@@ -1,67 +1,67 @@
-import React, { Component } from 'react'
-import { Text, View } from 'react-native'
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
-import { apiCall } from '../../../redux/actions/login'
-import * as actions from '../../../redux/actions/login'
-import * as loginConstants from '../../../constants/login/LoginConstants'
-import Button from '../../common/Button'
-import PasswordButton from '../../common/PasswordButton'
-import StyledInput from '../../common/StyledInput'
-import StyledFormLabel from '../../common/StyledFormLabel'
-import CenteredContainer from '../../common/CenteredContainer'
-import MainTitle from '../../common/MainTitle'
-import Container from '../../common/Container'
-import Spinner from '../../common/Spinner'
-import validatePassword from './utils/LoginUtils'
+import React, { Component } from 'react';
+import { Text, View } from 'react-native';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { apiCall } from '../../../redux/actions/login';
+import * as actions from '../../../redux/actions/login';
+import * as loginConstants from '../../../constants/login/LoginConstants';
+import Button from '../../common/Button';
+import PasswordButton from '../../common/PasswordButton';
+import StyledInput from '../../common/StyledInput';
+import StyledFormLabel from '../../common/StyledFormLabel';
+import CenteredContainer from '../../common/CenteredContainer';
+import MainTitle from '../../common/MainTitle';
+import Container from '../../common/Container';
+import Spinner from '../../common/Spinner';
+import validatePassword from './utils/LoginUtils';
 
 class LoginScreen extends Component {
   state = {
-    passwordError: false
-  }
+    passwordError: false,
+  };
 
   onSubmit = () => {
-    const { email, password } = this.state
-    const { apiCall } = this.props
+    const { email, password } = this.state;
+    const { apiCall } = this.props;
     // TODO: add more validation
     if (validatePassword(password) && email) {
-      apiCall(email, password)
-      this.setState({ passwordError: false })
+      apiCall(email, password);
+      this.setState({ passwordError: false });
     } else {
-      this.setState({ passwordError: true })
+      this.setState({ passwordError: true });
     }
-  }
+  };
 
   onError = () => {
-    const { error } = this.props
-    const { passwordError } = this.state
+    const { error } = this.props;
+    const { passwordError } = this.state;
     if (error) {
-      console.log(error, 'error')
+      console.log(error, 'error');
       return (
         <View>
           <Text>{error}</Text>
         </View>
-      )
+      );
     }
     if (passwordError) {
       return (
         <View>
           <Text>{loginConstants.PASSWORD_ERROR}</Text>
         </View>
-      )
+      );
     }
-  }
+  };
 
   renderButton = () => {
-    const { loading } = this.props
+    const { loading } = this.props;
     if (loading) {
-      return <Spinner />
+      return <Spinner />;
     }
-    return <Button onPress={this.onSubmit}>{loginConstants.SUBMIT}</Button>
-  }
+    return <Button onPress={this.onSubmit}>{loginConstants.SUBMIT}</Button>;
+  };
 
   render() {
-    const { email, password } = this.state
+    const { email, password } = this.state;
     return (
       <CenteredContainer>
         <MainTitle>{loginConstants.SIGN_IN}</MainTitle>
@@ -85,23 +85,23 @@ class LoginScreen extends Component {
 
         {this.renderButton()}
       </CenteredContainer>
-    )
+    );
   }
 }
 const mapStateToProps = state => {
-  const { email, password, error, loading, user } = state.auth
+  const { email, password, error, loading, user } = state.auth;
 
   return {
     email,
     password,
     error,
     loading,
-    user
-  }
-}
+    user,
+  };
+};
 
 //  TODO:
 export default connect(
   mapStateToProps,
   { apiCall }
-)(LoginScreen)
+)(LoginScreen);

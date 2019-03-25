@@ -1,29 +1,29 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import BottomButtonView from '../../common/BottomButtonView'
-import GeneralContainer from '../../common/GeneralContainer'
-import MainTitle from '../../common/MainTitle'
-import Button from '../../common/Button'
-import Container from '../../common/Container'
-import StyledTextBox from '../../common/StyledTextBox'
-import * as NavigationService from '../../../../NavigationService'
-import { addMessage } from '../../../redux/actions/create_postcard'
-import { strings } from '../../../i18next/i18n'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import BottomButtonView from '../../common/BottomButtonView';
+import GeneralContainer from '../../common/GeneralContainer';
+import MainTitle from '../../common/MainTitle';
+import Button from '../../common/Button';
+import Container from '../../common/Container';
+import StyledTextBox from '../../common/StyledTextBox';
+import * as NavigationService from '../../../../NavigationService';
+import { addMessage } from '../../../redux/actions/create_postcard';
+import { strings } from '../../../i18next/i18n';
 
 class Message extends Component {
   state = {
-    message: ''
-  }
+    message: '',
+  };
 
   onSubmit = () => {
-    const { message } = this.state
+    const { message } = this.state;
     // let message = message || this.props.message
-    this.props.addMessage(message || this.props.message)
-    NavigationService.navigate('PAYMENT')
-  }
+    this.props.addMessage(message || this.props.message);
+    NavigationService.navigate('PAYMENT');
+  };
 
   render() {
-    const { message } = this.state
+    const { message } = this.state;
     return (
       <GeneralContainer>
         <MainTitle>{strings('create_postcard.MESSAGE')}</MainTitle>
@@ -38,23 +38,21 @@ class Message extends Component {
           />
         </Container>
         <BottomButtonView>
-          <Button onPress={this.onSubmit}>
-            {strings('create_postcard.NEXT')}
-          </Button>
+          <Button onPress={this.onSubmit}>{strings('create_postcard.NEXT')}</Button>
         </BottomButtonView>
       </GeneralContainer>
       // </View>
-    )
+    );
   }
 }
 const mapStateToProps = state => {
-  const { message } = state.postCard
+  const { message } = state.postCard;
 
   return {
-    message
-  }
-}
+    message,
+  };
+};
 export default connect(
   mapStateToProps,
   { addMessage }
-)(Message)
+)(Message);

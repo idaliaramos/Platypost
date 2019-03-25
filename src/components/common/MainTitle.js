@@ -1,4 +1,4 @@
-import styled from 'styled-components/native'
+import styled from 'styled-components/native';
 
 const MainTitle = styled.Text`
   font-size: 22px
@@ -7,5 +7,5 @@ const MainTitle = styled.Text`
   text-align: center;
   margin-bottom: 30px;
   margin-top:50px;
-`
-export default MainTitle
+`;
+export default MainTitle;

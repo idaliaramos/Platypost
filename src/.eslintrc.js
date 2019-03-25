@@ -2,7 +2,7 @@ module.exports = {
   extends: ['airbnb', 'prettier'],
   parser: 'babel-eslint',
   globals: {
-    __DEV__: [true, false]
+    __DEV__: [true, false],
   },
   rules: {
     'object-curly-newline': ['error', { minProperties: 5, consistent: true }],
@@ -19,9 +19,9 @@ module.exports = {
           '/^on.+$/',
           'everything-else',
           '/^render.+$/',
-          'render'
-        ]
-      }
-    ]
-  }
-}
+          'render',
+        ],
+      },
+    ],
+  },
+};

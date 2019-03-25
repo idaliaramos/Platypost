@@ -1,24 +1,19 @@
-import {
-  ADD_RECEIVER_ADDRESS,
-  ADD_SENDER_ADDRESS,
-  ADD_MESSAGE,
-  ADD_IMAGE
-} from './types'
+import { ADD_RECEIVER_ADDRESS, ADD_SENDER_ADDRESS, ADD_MESSAGE, ADD_IMAGE } from './types';
 
 export const addReceiverAddress = info => ({
   type: ADD_RECEIVER_ADDRESS,
-  payload: info
-})
+  payload: info,
+});
 
 export const addSenderAddress = text => ({
   type: ADD_SENDER_ADDRESS,
-  payload: text
-})
+  payload: text,
+});
 export const addMessage = text => ({
   type: ADD_MESSAGE,
-  payload: text
-})
+  payload: text,
+});
 export const addImage = text => ({
   type: ADD_IMAGE,
-  payload: text
-})
+  payload: text,
+});

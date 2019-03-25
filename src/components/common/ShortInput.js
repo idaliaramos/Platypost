@@ -1,4 +1,4 @@
-import styled from 'styled-components/native'
+import styled from 'styled-components/native';
 
 const ShortInput = styled.TextInput`
   margin-bottom: 10px;
@@ -6,5 +6,5 @@ const ShortInput = styled.TextInput`
   width: 133px;
   border-bottom-width: 1px;
   border-color: grey;
-`
-export default ShortInput
+`;
+export default ShortInput;
