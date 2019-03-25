@@ -13,9 +13,7 @@ I18n.translations = {
   en,
   fr,
   hun,
-  span,
-  german,
-  chinese,
+  he
 };
 
 const currentLocale = I18n.currentLocale();

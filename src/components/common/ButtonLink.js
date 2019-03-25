@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text } from 'react-native';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 const ButtonContainer = styled.TouchableOpacity`
   /* background-color: #00cc99; */

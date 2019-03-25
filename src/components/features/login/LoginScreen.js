@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
 import { Text, View } from 'react-native';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import { apiCall } from '../../../redux/actions/login';
-import * as actions from '../../../redux/actions/login';
-import * as loginConstants from '../../../constants/login/LoginConstants';
 import Button from '../../common/Button';
-import PasswordButton from '../../common/PasswordButton';
 import StyledInput from '../../common/StyledInput';
 import StyledFormLabel from '../../common/StyledFormLabel';
 import CenteredContainer from '../../common/CenteredContainer';
@@ -46,7 +42,7 @@ class LoginScreen extends Component {
     if (passwordError) {
       return (
         <View>
-          <Text>{loginConstants.PASSWORD_ERROR}</Text>
+          <Text>TODO:  PASSWORD_ERROR</Text>
         </View>
       );
     }
@@ -57,22 +53,22 @@ class LoginScreen extends Component {
     if (loading) {
       return <Spinner />;
     }
-    return <Button onPress={this.onSubmit}>{loginConstants.SUBMIT}</Button>;
+    return <Button onPress={this.onSubmit}>TODO: SUBMIT</Button>;
   };
 
   render() {
     const { email, password } = this.state;
     return (
       <CenteredContainer>
-        <MainTitle>{loginConstants.SIGN_IN}</MainTitle>
+        <MainTitle>TODO:  SIGN_IN</MainTitle>
         <Container>
-          <StyledFormLabel>Email</StyledFormLabel>
+          <StyledFormLabel>TODO:  Email</StyledFormLabel>
           <StyledInput
             onChangeText={text => this.setState({ email: text })}
             // value={this.state.email || this.props.email}
           />
           <View>
-            <StyledFormLabel>{loginConstants.PASSWORD}</StyledFormLabel>
+            <StyledFormLabel>TODO:  PASSWORD</StyledFormLabel>
             <StyledInput
               onChangeText={text => this.setState({ password: text })}
               // value={this.state.password || this.props.password}

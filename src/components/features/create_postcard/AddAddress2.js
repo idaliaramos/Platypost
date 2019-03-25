@@ -6,7 +6,6 @@ import Container from '../../common/Container';
 import GeneralContainer from '../../common/GeneralContainer';
 import StyledInput from '../../common/StyledInput';
 import StyledFormLabel from '../../common/StyledFormLabel';
-import * as postcardConstants from '../../../constants/create_postcard/PostcardConstants';
 import * as NavigationService from '../../../../NavigationService';
 import { addSenderAddress } from '../../../redux/actions/create_postcard';
 
@@ -37,7 +36,7 @@ class AddAddress2 extends Component {
     return (
       // <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <GeneralContainer>
-        <Text>{postcardConstants.SENDER_ADDRESS}</Text>
+        <Text>TODO: SENDER_ADDRESS</Text>
         <Container>
           <StyledFormLabel>Name</StyledFormLabel>
           <StyledInput
@@ -47,7 +46,7 @@ class AddAddress2 extends Component {
           <StyledFormLabel>Address</StyledFormLabel>
           <StyledInput onChangeText={text => this.setState({ address: text })} value={address || senderInfo.address} />
         </Container>
-        <Button onPress={this.onSubmit}>{postcardConstants.NEXT}</Button>
+        <Button onPress={this.onSubmit}>TODO NEXT</Button>
       </GeneralContainer>
     );
   }

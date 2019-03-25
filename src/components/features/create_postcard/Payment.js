@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Text, View } from 'react-native';
+import { Text } from 'react-native';
 import Button from '../../common/Button';
 import BottomButtonView from '../../common/BottomButtonView';
 import ButtonLink from '../../common/ButtonLink';
