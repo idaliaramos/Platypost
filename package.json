@@ -16,11 +16,16 @@
   "dependencies": {
     "expo": "^31.0.2",
     "firebase": "^5.6.0",
+    "i18next": "^15.0.7",
+    "i18next-react-native-language-detector": "^1.0.2",
     "react": "16.6.3",
+    "react-i18next": "^10.5.1",
     "react-native": "0.57.8",
     "react-native-gesture-handler": "^1.0.15",
+    "react-native-i18n": "^2.0.15",
     "react-native-image-crop-picker": "^0.22.0",
     "react-native-languages": "^3.0.1",
+    "react-native-locale-detector": "^1.0.1",
     "react-native-permissions": "^1.1.1",
     "react-navigation": "^3.0.9",
     "react-redux": "^6.0.0",
@@ -48,10 +53,5 @@
   },
   "jest": {
     "preset": "react-native"
-  },
-  "prettier": {
-    "jsxBracketSameLine": true,
-    "semi": false,
-    "singleQuote": true
   }
 }

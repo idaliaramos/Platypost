@@ -1,0 +1,25 @@
+{
+  "login": {
+    "SIGN_IN" : "Sign In",
+    "LOG_IN": "Log In",
+    "EMAIL ": "Email",
+    "PASSWORD" : "Password",
+    "SUBMIT" : "Submit",
+    "PASSWORD_ERROR" : "Password must be at least 6 characters",
+  },
+  "create_postcard": {
+    "ADDRESS": "Address",
+    "MESSAGE": "Message",
+    "UPLOAD_IMAGE": "télécharger une image",
+    "NEXT": "Suivant",
+    "TOTAL": "Total",
+    "ENTER_MESSAGE": "Entrer un message",
+    "TO": "À",
+    "NAME": "Prenom",
+    "ADDRESS": "Adresse",
+    "PAYMENT": "Paiement",
+    "PAY": "Payer",
+    "CHANGE_IMAGE": "Changer l'image"
+  }
+
+}

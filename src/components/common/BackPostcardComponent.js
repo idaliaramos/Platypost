@@ -1,9 +1,8 @@
-import React from 'react'
-import { View, Text } from 'react-native'
-import MainTitle from './MainTitle'
-import PostCardContainer from './PostCardContainer'
-import { Fonts } from '../../utils/Fonts'
-import AddressReviewComponent from './AddressReviewComponent'
+import React from 'react';
+import { View, Text } from 'react-native';
+import PostCardContainer from './PostCardContainer';
+import { Fonts } from '../../utils/Fonts';
+import AddressReviewComponent from './AddressReviewComponent';
 
 const BackPostCardComponent = ({ info, message }) => (
   <PostCardContainer
@@ -16,7 +15,7 @@ const BackPostCardComponent = ({ info, message }) => (
       borderRightColor: '#EAEAEA',
       borderTopColor: '#EAEAEA',
       borderBottomColor: 'grey',
-      blurRadius: 1
+      blurRadius: 1,
     }}
   >
     <View style={{ flexDirection: 'row' }}>
@@ -27,7 +26,7 @@ const BackPostCardComponent = ({ info, message }) => (
             margin: 12,
             marginTop: 25,
             fontSize: 12,
-            fontFamily: Fonts.Handlee
+            fontFamily: Fonts.Handlee,
           }}
         >
           {message}
@@ -39,13 +38,13 @@ const BackPostCardComponent = ({ info, message }) => (
           // borderWidth: 1,
 
           marginTop: 70,
-          fontSize: 2
+          fontSize: 2,
         }}
       >
         <AddressReviewComponent info={info} />
       </View>
     </View>
   </PostCardContainer>
-)
+);
 
-export default BackPostCardComponent
+export default BackPostCardComponent;

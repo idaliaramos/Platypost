@@ -1,3 +1,3 @@
 export const Fonts = {
-  Handlee: 'Handlee-Regular'
-}
+  Handlee: 'Handlee-Regular',
+};
