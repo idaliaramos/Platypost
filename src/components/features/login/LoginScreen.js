@@ -7,7 +7,8 @@ import StyledInput from '../../common/StyledInput';
 import StyledFormLabel from '../../common/StyledFormLabel';
 import CenteredContainer from '../../common/CenteredContainer';
 import MainTitle from '../../common/MainTitle';
-import Container from '../../common/Container';
+import Container from '../../common/Container'
+import { strings } from '../../../i18next/i18n';;
 import Spinner from '../../common/Spinner';
 import validatePassword from './utils/LoginUtils';
 
@@ -31,18 +32,18 @@ class LoginScreen extends Component {
   onError = () => {
     const { error } = this.props;
     const { passwordError } = this.state;
-    if (error) {
-      console.log(error, 'error');
-      return (
-        <View>
-          <Text>{error}</Text>
-        </View>
-      );
-    }
+    // if (error) {
+    //   console.log(error, 'error');
+    //   return (
+    //     <View>
+    //       <Text>{error}</Text>
+    //     </View>
+    //   );
+    // }
     if (passwordError) {
       return (
         <View>
-          <Text>TODO:  PASSWORD_ERROR</Text>
+          <Text>{strings('login.PASSWORD_ERROR')}</Text>
         </View>
       );
     }
@@ -53,22 +54,22 @@ class LoginScreen extends Component {
     if (loading) {
       return <Spinner />;
     }
-    return <Button onPress={this.onSubmit}>TODO: SUBMIT</Button>;
+    return <Button onPress={this.onSubmit}>{strings('login.LOG_IN')}</Button>;
   };
 
   render() {
     const { email, password } = this.state;
     return (
       <CenteredContainer>
-        <MainTitle>TODO:  SIGN_IN</MainTitle>
+        <MainTitle>{strings('login.LOG_IN')}</MainTitle>
         <Container>
-          <StyledFormLabel>TODO:  Email</StyledFormLabel>
+          <StyledFormLabel>{strings('login.EMAIL')}</StyledFormLabel>
           <StyledInput
             onChangeText={text => this.setState({ email: text })}
             // value={this.state.email || this.props.email}
           />
           <View>
-            <StyledFormLabel>TODO:  PASSWORD</StyledFormLabel>
+            <StyledFormLabel>{strings('login.PASSWORD')}</StyledFormLabel>
             <StyledInput
               onChangeText={text => this.setState({ password: text })}
               // value={this.state.password || this.props.password}

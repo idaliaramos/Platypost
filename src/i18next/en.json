@@ -2,7 +2,7 @@
   "login": {
     "SIGN_IN" : "Sign In",
     "LOG_IN": "Log In",
-    "EMAIL ": "Email",
+    "EMAIL": "Email",
     "PASSWORD" : "Password",
     "SUBMIT" : "Submit",
     "PASSWORD_ERROR" : "Password must be at least 6 characters",
@@ -18,6 +18,7 @@
     "NAME": "Name",
     "ADDRESS": "Address",
     "PAYMENT": "Payment",
+    "PAY": "Pay",
     "CHANGE_IMAGE":"Change Image"
   },
 
