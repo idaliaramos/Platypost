@@ -11,6 +11,9 @@ import GeneralContainer from '../../common/GeneralContainer';
 import * as NavigationService from '../../../../NavigationService';
 import { addImage } from '../../../redux/actions/create_postcard';
 import { strings } from '../../../i18next/i18n';
+import toPDF from "./pdfConverter.js";
+
+
 
 class LoggedinScreen extends Component {
   state = {
@@ -35,7 +38,29 @@ class LoggedinScreen extends Component {
   onSubmit = () => {
     const { addImage } = this.props;
     const { image } = this.state;
-    addImage(image);
+    let mailInfo={
+      receiverInfo:{
+        name:'idalia',
+        address_line1:'229 Haight st',
+        address_city: 'San Francisco',
+        address_state: 'CA',
+        address_zip: '94102'},
+        messageInfo: {message: 'hello'},
+      // image: this.state.image.data
+    }
+   addImage(image);
+   toPDF([image])
+   .then(pdf => {
+     mailInfo.pdf = pdf
+     fetch("http://localhost:3000/createPostcard", {
+       method: 'POST',
+       headers: {
+       'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(mailInfo)
+   })
+});
+
     NavigationService.navigate('ADD_ADDRESS_1');
   };
 
@@ -49,14 +74,22 @@ class LoggedinScreen extends Component {
       this.setState({ photoPermission: response });
       if (response === 'authorized') {
         ImagePicker.openPicker({
-          width: 500,
-          height: 400,
+          width: 1875,
+          height: 1275,
           cropping: true,
           includeBase64: true,
           writeTempFile: false,
         }).then(image => {
           this.setState({
             image,
+          })
+          console.log(image, 'image')
+          toPDF([image])
+          .then(pdf => {
+            console.log("pdf ", pdf);
+            this.setState({
+              pdf: pdf
+            })
           });
         });
       } else {
@@ -74,7 +107,7 @@ class LoggedinScreen extends Component {
         <Image
           style={{
             width: 500,
-            height: 300,
+            height: 400,
             backgroundImage: 'https://www.grouphealth.ca/wp-content/uploads/2018/05/placeholder-image-600x450.png',
           }}
           source={{
